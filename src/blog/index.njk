@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: Relocation Guides & Articles
+description: Expert guides for relocating from California to Phoenix. Tax comparisons, neighborhood guides, school information, and insider tips.
+permalink: /blog/
+---
+
+<section class="page-header">
+    <h1>Relocation Guides</h1>
+    <p>Expert insights to help you navigate your California-to-Phoenix move</p>
+</section>
+
+<section class="section">
+    <div class="posts-grid">
+        {%- for post in collections.posts -%}
+        <article class="post-card">
+            <div class="post-card-image">
+                {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+                {% else %}
+                <span class="post-card-category">{{ post.data.category or "Guide" }}</span>
+                {% endif %}
+            </div>
+            <div class="post-card-content">
+                <div class="post-card-meta">
+                    <time datetime="{{ post.date | htmlDateString }}">{{ post.date | shortDate }}</time>
+                    <span>•</span>
+                    <span>{{ post.content | readingTime }}</span>
+                </div>
+                <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                <p>{{ post.data.excerpt or post.content | excerpt }}</p>
+                <a href="{{ post.url }}" class="read-more">Read More →</a>
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+    
+    {% if collections.posts.length == 0 %}
+    <p style="text-align: center; color: var(--color-gray-light);">No posts yet. Check back soon!</p>
+    {% endif %}
+</section>
+
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Have Questions About Relocating?</h2>
+        <p>Our team has helped hundreds of California families make the move to Phoenix. Get personalized answers to your specific situation.</p>
+        <a href="/contact/" class="btn btn-primary">Ask Us Anything</a>
+    </div>
+</section>

@@ -1,0 +1,92 @@
+---
+layout: layouts/base.njk
+title: Contact Us
+description: Get in touch with Dwello's Phoenix relocation specialists. We're here to answer your questions about moving from California to Arizona.
+permalink: /contact/
+---
+
+<section class="page-header">
+    <h1>Let's Talk</h1>
+    <p>Ready to explore your move to Phoenix? We're here to help.</p>
+</section>
+
+<section class="section">
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 18px; color: var(--color-gray-light); margin-bottom: var(--space-xl);">
+            Whether you're just starting to research or ready to schedule neighborhood tours, we'd love to hear from you.
+        </p>
+        
+        <div style="background: white; padding: var(--space-xl); border-radius: 12px; box-shadow: 0 4px 20px rgba(45, 62, 64, 0.08);">
+            <h2 style="margin-bottom: var(--space-lg);">Schedule a Consultation</h2>
+            
+            <!-- Replace this with your actual form - Netlify Forms, Formspree, etc. -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display: none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+                
+                <div style="margin-bottom: var(--space-md); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Name</label>
+                    <input type="text" name="name" required 
+                           style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit;">
+                </div>
+                
+                <div style="margin-bottom: var(--space-md); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Email</label>
+                    <input type="email" name="email" required
+                           style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit;">
+                </div>
+                
+                <div style="margin-bottom: var(--space-md); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Phone (optional)</label>
+                    <input type="tel" name="phone"
+                           style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit;">
+                </div>
+                
+                <div style="margin-bottom: var(--space-md); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Where are you moving from?</label>
+                    <select name="location" 
+                            style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit; background: white;">
+                        <option value="">Select a region...</option>
+                        <option value="Los Angeles">Los Angeles Area</option>
+                        <option value="San Francisco Bay Area">San Francisco Bay Area</option>
+                        <option value="San Diego">San Diego Area</option>
+                        <option value="Other California">Other California</option>
+                        <option value="Midwest">Midwest</option>
+                        <option value="Pacific Northwest">Pacific Northwest</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: var(--space-md); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">What's your timeline?</label>
+                    <select name="timeline" 
+                            style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit; background: white;">
+                        <option value="">Select a timeline...</option>
+                        <option value="0-3 months">0-3 months</option>
+                        <option value="3-6 months">3-6 months</option>
+                        <option value="6-12 months">6-12 months</option>
+                        <option value="12+ months">12+ months</option>
+                        <option value="Just researching">Just researching</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: var(--space-lg); text-align: left;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Tell us about your move</label>
+                    <textarea name="message" rows="4" 
+                              placeholder="What neighborhoods interest you? What are your priorities (schools, commute, budget)? Any questions?"
+                              style="width: 100%; padding: 14px 16px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+        
+        <div style="margin-top: var(--space-xl); color: var(--color-gray-light);">
+            <p>Or email us directly at <a href="mailto:hello@dwello.com">hello@dwello.com</a></p>
+        </div>
+    </div>
+</section>

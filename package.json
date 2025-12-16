@@ -1,0 +1,12 @@
+{
+  "name": "dwello-site",
+  "version": "1.0.0",
+  "description": "Dwello - Phoenix Real Estate Brokerage",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

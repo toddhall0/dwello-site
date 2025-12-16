@@ -1,0 +1,16 @@
+# Images
+
+This folder contains image assets for the Dwello website.
+
+## Subfolders
+
+- `uploads/` - Images uploaded through the CMS
+- Add your own images here as needed
+
+## Recommended Images
+
+Consider adding:
+- `dwello-logo.svg` - Logo for the CMS header
+- `og-image.jpg` - Default social sharing image (1200x630px)
+- Neighborhood photos for the neighborhoods page
+- Team photos for the about page

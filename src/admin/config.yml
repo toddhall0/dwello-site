@@ -1,0 +1,107 @@
+# Decap CMS Configuration for Dwello
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncomment below for local testing with npx decap-server
+# local_backend: true
+
+# Media files will be stored here
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL (update after deployment)
+site_url: https://your-site.netlify.app
+display_url: https://your-site.netlify.app
+
+# Logo for the CMS
+logo_url: /images/dwello-logo.svg
+
+# Slug settings
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Collections (content types)
+collections:
+  # Blog Posts
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/blog/posts"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
+    summary: "{{title}} — {{date | date('MMM D, YYYY')}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The main headline for your post"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Relocation Guide"
+          - "Tax Comparison"
+          - "City Comparison"
+          - "Neighborhood Guide"
+          - "Schools"
+          - "Lifestyle"
+          - "Market Update"
+        default: "Relocation Guide"
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "A brief summary (1-2 sentences) shown in post previews"
+        pattern: ['.{50,200}', "Excerpt should be 50-200 characters"]
+
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Optional hero image for the post"
+        media_library:
+          config:
+            max_file_size: 2048000
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "The main content of your post. Use headers (##, ###) to organize."
+
+  # Site Settings (optional)
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "Site Info"
+        file: "src/_data/site.json"
+        fields:
+          - label: "Site Name"
+            name: "name"
+            widget: "string"
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Site URL"
+            name: "url"
+            widget: "string"
+          - label: "Author"
+            name: "author"
+            widget: "string"

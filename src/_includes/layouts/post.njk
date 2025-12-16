@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="post-hero">
+    <div class="post-hero-inner">
+        <nav class="breadcrumb">
+            <a href="/">Home</a>
+            <span>›</span>
+            <a href="/blog/">Blog</a>
+            <span>›</span>
+            <span>{{ category or "Article" }}</span>
+        </nav>
+        <span class="category-tag">{{ category or "Relocation Guide" }}</span>
+        <h1>{{ title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ date | htmlDateString }}">{{ date | formatDate }}</time>
+            <span class="divider-dot"></span>
+            <span>{{ content | readingTime }}</span>
+        </div>
+    </div>
+</section>
+
+<article class="post-content">
+    {{ content | safe }}
+    
+    <div class="post-cta">
+        <h3>Ready to Make Your Move?</h3>
+        <p>Let Dwello guide you home. Our Phoenix relocation specialists are here to help.</p>
+        <a href="/contact/" class="btn btn-primary">Schedule a Consultation</a>
+    </div>
+</article>
+
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Planning Your Move to Phoenix?</h2>
+        <p>Our relocation specialists help California families find their perfect Phoenix neighborhood. Get personalized guidance from people who've made the move themselves.</p>
+        <a href="/contact/" class="btn btn-primary">Start Your Journey</a>
+    </div>
+</section>
